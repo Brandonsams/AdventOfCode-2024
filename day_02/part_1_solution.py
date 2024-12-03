@@ -3,6 +3,7 @@ from pathlib import Path
 root_dir = Path(__file__).parent
 problem_input_file = f"{root_dir}/puzzle_input.txt"
 
+
 def load_input(filename):
     lines = []
     with open(filename) as file:
@@ -18,7 +19,6 @@ def is_safe_report(report):
         return True
 
     diffs = []
-    # loop through pairs of items in report, at i and i+1
     for i in range(len(report_nums)-1):
         diff = report_nums[i+1] - report_nums[i]
         diffs.append(diff)
