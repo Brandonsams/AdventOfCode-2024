@@ -1,6 +1,6 @@
 from pathlib import Path
 
-root_dir = Path(__file__).parent
+root_dir = Path(__file__).parent.parent
 example_input_file = f"{root_dir}/example_input.txt"
 problem_input_file = f"{root_dir}/problem_input.txt"
 
