@@ -1,8 +1,7 @@
 from pathlib import Path
 
-root_dir = Path(__file__).parent.parent
-example_input_file = f"{root_dir}/example_input.txt"
-problem_input_file = f"{root_dir}/problem_input.txt"
+root_dir = Path(__file__).parent
+problem_input_file = f"{root_dir}/puzzle_input.txt"
 
 
 def load_input(filename):
@@ -30,7 +29,5 @@ def solve(filename):
 
 
 if __name__ == "__main__":
-    example_answer = solve(example_input_file)
-    print(example_answer)
     problem_answer = solve(problem_input_file)
     print(problem_answer)

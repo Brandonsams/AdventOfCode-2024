@@ -1,9 +1,7 @@
 from pathlib import Path
 
-root_dir = Path(__file__).parent.parent
-example_input_file = f"{root_dir}/example_input.txt"
-problem_input_file = f"{root_dir}/problem_input.txt"
-
+root_dir = Path(__file__).parent
+problem_input_file = f"{root_dir}/puzzle_input.txt"
 
 def load_input(filename):
     lines = []
@@ -14,15 +12,13 @@ def load_input(filename):
 
 
 def is_safe_report(report):
-    report_nums = [int(x) for x in report.split()]
-
-    if len(report_nums) <= 1:
+    if len(report) <= 1:
         return True
 
     diffs = []
     # loop through pairs of items in report, at i and i+1
-    for i in range(len(report_nums)-1):
-        diff = report_nums[i+1] - report_nums[i]
+    for i in range(len(report)-1):
+        diff = report[i+1] - report[i]
         diffs.append(diff)
 
     is_strictly_increasing = all(diff > 0 for diff in diffs)
@@ -39,13 +35,27 @@ def is_safe_report(report):
     return True
 
 
+def is_almost_safe_report(report):
+    for j in range(len(report)):
+        sub_report = [x for i, x in enumerate(report) if i != j]
+        if is_safe_report(sub_report):
+            return True
+    return False
+
+
 def solve(filename):
-    reports = load_input(filename=filename)
+    lines = load_input(filename=filename)
+    reports = []
+    for line in lines:
+        reports.append([int(x) for x in line.split()])
 
     safe_report_count = 0
     for report in reports:
         if is_safe_report(report=report):
             safe_report_count += 1
+        else:
+            if is_almost_safe_report(report=report):
+                safe_report_count += 1
 
     return safe_report_count
 

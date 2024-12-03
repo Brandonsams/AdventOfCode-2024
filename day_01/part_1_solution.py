@@ -1,8 +1,8 @@
 from pathlib import Path
 
-root_dir = Path(__file__).parent.parent
-example_input_file = f"{root_dir}/example_input.txt"
-problem_input_file = f"{root_dir}/problem_input.txt"
+root_dir = Path(__file__).parent
+# example_input_file = f"{root_dir}/puzzle_input_example.txt"
+problem_input_file = f"{root_dir}/puzzle_input.txt"
 
 
 def load_input(filename):
@@ -26,15 +26,13 @@ def solve(filename):
     r_list.sort()
 
     total_diff = 0
-    for l, r in zip(l_list,r_list):
+    for l, r in zip(l_list, r_list):
         diff = abs(l - r)
         total_diff += diff
-    
+
     return total_diff
 
 
 if __name__ == "__main__":
-    example_answer = solve(example_input_file)
-    print(example_answer)
     problem_answer = solve(problem_input_file)
     print(problem_answer)
