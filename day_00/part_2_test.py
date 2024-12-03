@@ -1,5 +1,5 @@
-import pytest
-from day_00.part_1_solution import solve
+import pytest # type: ignore
+from day_00.part_2_solution import solve
 from pathlib import Path
 
 root_dir = Path(__file__).parent

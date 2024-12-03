@@ -1,4 +1,4 @@
-import pytest
+import pytest # type: ignore
 from day_01.part_2_solution import solve
 from pathlib import Path
 
