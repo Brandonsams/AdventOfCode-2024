@@ -5,7 +5,7 @@ from pathlib import Path
 root_dir = Path(__file__).parent
 input_file = f"{root_dir}/puzzle_input_example.txt"
 
-expected_answer = 0
+expected_answer = 18
 
 
 @pytest.mark.parametrize("filename, expected", [(input_file, expected_answer)])
