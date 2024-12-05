@@ -3,7 +3,7 @@ import random
 
 root_dir = Path(__file__).parent
 problem_input_file = f"{root_dir}/puzzle_input.txt"
-# problem_input_file = f"{root_dir}/puzzle_input_example.txt"
+problem_input_file = f"{root_dir}/puzzle_input_example.txt"
 
 
 def load_input(filename):
@@ -34,6 +34,7 @@ def solve(filename):
     update_count = 0
     for update in updates:
 
+        needed_adjusting = False
         update_count += 1
         print(f"{update_count} of {len(updates)}")
 
@@ -55,13 +56,16 @@ def solve(filename):
 
             if is_good_update:
                 middle = update[int((len(update)-1)/2)]
-                answer += middle
+                if needed_adjusting:
+                    answer += middle 
                 is_validly_ordered_update = True
             else:
                 # random.shuffle(update)
-                update[swap_indices[0]],update[swap_indices[1]] = update[swap_indices[1]],update[swap_indices[0]]
+                needed_adjusting = True
+                update[swap_indices[0]], update[swap_indices[1]
+                                                ] = update[swap_indices[1]], update[swap_indices[0]]
 
-    return answer - 4135
+    return answer
 
 
 if __name__ == "__main__":
