@@ -57,7 +57,7 @@ def solve(filename):
             if is_good_update:
                 middle = update[int((len(update)-1)/2)]
                 if needed_adjusting:
-                    answer += middle 
+                    answer += middle
                 is_validly_ordered_update = True
             else:
                 # random.shuffle(update)
