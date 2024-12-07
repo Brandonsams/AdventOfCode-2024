@@ -3,7 +3,7 @@ import random
 
 root_dir = Path(__file__).parent
 problem_input_file = f"{root_dir}/puzzle_input.txt"
-problem_input_file = f"{root_dir}/puzzle_input_example.txt"
+# problem_input_file = f"{root_dir}/puzzle_input_example.txt"
 
 
 def load_input(filename):
@@ -36,7 +36,7 @@ def solve(filename):
 
         needed_adjusting = False
         update_count += 1
-        print(f"{update_count} of {len(updates)}")
+        # print(f"{update_count} of {len(updates)}")
 
         is_validly_ordered_update = False
         while not is_validly_ordered_update:

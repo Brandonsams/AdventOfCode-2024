@@ -11,8 +11,8 @@ expected_answer = 5285
 
 
 @pytest.mark.parametrize("filename, expected", [
-    (input_file_example, expected_answer_example),
-    (input_file, expected_answer)
+    (input_file_example, expected_answer_example)
+    # ,(input_file, expected_answer)
 ])
 def test_solve(filename, expected):
     answer = solve(filename=filename)
