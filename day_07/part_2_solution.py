@@ -50,7 +50,7 @@ def check_line(line):
 
 def solve(filename):
     lines = load_input(filename=filename)
-    with Pool(9) as p:
+    with Pool() as p:
         return sum(p.map(check_line, lines))
 
 
