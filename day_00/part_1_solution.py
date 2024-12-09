@@ -2,6 +2,8 @@ from pathlib import Path
 
 root_dir = Path(__file__).parent
 problem_input_file = f"{root_dir}/puzzle_input.txt"
+problem_input_file = f"{root_dir}/puzzle_input_example.txt"
+
 
 def load_input(filename):
     lines = []
@@ -9,6 +11,7 @@ def load_input(filename):
         for line in file:
             lines.append(line.rstrip())
     return lines
+
 
 def solve(filename):
     lines = load_input(filename=filename)
